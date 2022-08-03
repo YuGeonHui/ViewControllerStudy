@@ -24,6 +24,7 @@
 import UIKit
 
 struct MaterialColorDataSource {
+    
     struct Section {
         let title: String
         var colors: [UIColor]
@@ -107,6 +108,7 @@ extension MaterialColor {
 }
 
 public extension UIColor {
+    
     struct MaterialRed: MaterialColor {
         static let title = "Material Red"
         
@@ -128,6 +130,7 @@ public extension UIColor {
     }
     
     struct MaterialPink: MaterialColor {
+        
         static let title = "Material Pink"
         
         public static let primary = UIColor(hexString: "#E91E63")
