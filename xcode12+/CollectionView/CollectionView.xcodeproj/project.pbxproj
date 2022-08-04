@@ -33,6 +33,7 @@
 		AAB967132105565C0078FCA8 /* FlowLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB967122105565C0078FCA8 /* FlowLayoutViewController.swift */; };
 		AAC8D0302106790A0040D7CA /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8D02F2106790A0040D7CA /* ColorListViewController.swift */; };
 		AADA67D725E5128D00B7C82D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA67D625E5128D00B7C82D /* SceneDelegate.swift */; };
+		B660151B289BF1FA00A437FC /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660151A289BF1FA00A437FC /* ColorCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		AAB967122105565C0078FCA8 /* FlowLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutViewController.swift; sourceTree = "<group>"; };
 		AAC8D02F2106790A0040D7CA /* ColorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListViewController.swift; sourceTree = "<group>"; };
 		AADA67D625E5128D00B7C82D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B660151A289BF1FA00A437FC /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				AA63665225E5477200C68889 /* CustomCell.storyboard */,
 				AA5B472221078E58007AC6A8 /* CustomCellViewController.swift */,
+				B660151A289BF1FA00A437FC /* ColorCollectionViewCell.swift */,
 			);
 			path = CustomCell;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B660151B289BF1FA00A437FC /* ColorCollectionViewCell.swift in Sources */,
 				AAC8D0302106790A0040D7CA /* ColorListViewController.swift in Sources */,
 				AADA67D725E5128D00B7C82D /* SceneDelegate.swift in Sources */,
 				AA5B472321078E58007AC6A8 /* CustomCellViewController.swift in Sources */,
@@ -447,8 +451,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FUV2GHVQ46;
 				INFOPLIST_FILE = CollectionView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -467,8 +472,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FUV2GHVQ46;
 				INFOPLIST_FILE = CollectionView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
