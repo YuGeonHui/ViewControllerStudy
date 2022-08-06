@@ -34,7 +34,12 @@ class SupplementaryViewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let layout = listCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.sectionHeadersPinToVisibleBounds = true
+            layout.footerReferenceSize = CGSize(width: 50, height: 50)
+        }
         
+        listCollectionView.register(FooterCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footer")
     }
 }
 
@@ -56,6 +61,33 @@ extension SupplementaryViewViewController: UICollectionViewDataSource {
         cell.contentView.backgroundColor = list[indexPath.section].colors[indexPath.row]
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        print(kind)
+        switch kind {
+            
+        case UICollectionView.elementKindSectionHeader:
+        
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as! HeaderCollectionReusableView
+            
+            header.sectionTitleLabel.text = list[indexPath.section].title
+            
+            return header
+            
+        case UICollectionView.elementKindSectionFooter:
+            
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footer", for: indexPath) as! FooterCollectionReusableView
+            
+            footer.sectionFooterLabel.text = list[indexPath.section].title
+            
+            return footer
+            
+        default:
+            
+            fatalError("Unsupported Kind")
+        }
     }
 }
 

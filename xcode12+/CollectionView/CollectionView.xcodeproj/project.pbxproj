@@ -34,6 +34,8 @@
 		AAC8D0302106790A0040D7CA /* ColorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC8D02F2106790A0040D7CA /* ColorListViewController.swift */; };
 		AADA67D725E5128D00B7C82D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADA67D625E5128D00B7C82D /* SceneDelegate.swift */; };
 		B660151B289BF1FA00A437FC /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660151A289BF1FA00A437FC /* ColorCollectionViewCell.swift */; };
+		B660151D289C14B100A437FC /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660151C289C14B100A437FC /* HeaderCollectionReusableView.swift */; };
+		B660151F289C15DA00A437FC /* FooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660151E289C15DA00A437FC /* FooterCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		AAC8D02F2106790A0040D7CA /* ColorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListViewController.swift; sourceTree = "<group>"; };
 		AADA67D625E5128D00B7C82D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B660151A289BF1FA00A437FC /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		B660151C289C14B100A437FC /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		B660151E289C15DA00A437FC /* FooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterCollectionReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 			children = (
 				AA63665B25E5483600C68889 /* SupplementaryView.storyboard */,
 				AA5B47262107BCFA007AC6A8 /* SupplementaryViewViewController.swift */,
+				B660151C289C14B100A437FC /* HeaderCollectionReusableView.swift */,
+				B660151E289C15DA00A437FC /* FooterCollectionReusableView.swift */,
 			);
 			path = SupplementaryView;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B660151D289C14B100A437FC /* HeaderCollectionReusableView.swift in Sources */,
 				B660151B289BF1FA00A437FC /* ColorCollectionViewCell.swift in Sources */,
 				AAC8D0302106790A0040D7CA /* ColorListViewController.swift in Sources */,
 				AADA67D725E5128D00B7C82D /* SceneDelegate.swift in Sources */,
@@ -300,6 +307,7 @@
 				AA87B3432108F69700BFF504 /* SelectionViewController.swift in Sources */,
 				AAB9670E2105493B0078FCA8 /* SelfSizingCellViewController.swift in Sources */,
 				AA87B34D2109745800BFF504 /* PrefetchingViewController.swift in Sources */,
+				B660151F289C15DA00A437FC /* FooterCollectionReusableView.swift in Sources */,
 				AA87B345210928F000BFF504 /* EditViewController.swift in Sources */,
 				AA87B34B210973D200BFF504 /* Landscape.swift in Sources */,
 				AA87B34721092D8200BFF504 /* EditingHeaderCollectionReusableView.swift in Sources */,

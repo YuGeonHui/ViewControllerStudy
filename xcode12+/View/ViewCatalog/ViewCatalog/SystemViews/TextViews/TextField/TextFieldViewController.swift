@@ -25,9 +25,23 @@ import UIKit
 
 class TextFieldViewController: UIViewController {
     
+    @IBOutlet weak var inputField: UITextField!
+    @IBOutlet weak var valueLabel: UILabel!
+    
+    @IBAction func report(_ sender: Any) {
+        
+        // MARK: - Text 속성을 이용해서 가지고온다.
+        guard let text = inputField.text, text.count > 0 else {
+            return
+        }
+        
+        valueLabel.text = text
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        self.inputField.placeholder = "Input Value"
     }
 }

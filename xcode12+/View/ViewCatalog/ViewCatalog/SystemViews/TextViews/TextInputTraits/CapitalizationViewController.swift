@@ -29,6 +29,12 @@ class CapitalizationViewController: UIViewController {
     
     @IBAction func capitalizationChanged(_ sender: UISegmentedControl) {
         
+        inputField.resignFirstResponder()
+        
+        let type = UITextAutocapitalizationType(rawValue: sender.selectedSegmentIndex) ?? .none
+        inputField.autocapitalizationType = type
+        
+        inputField.becomeFirstResponder()
     }
     
     override func viewDidLoad() {
