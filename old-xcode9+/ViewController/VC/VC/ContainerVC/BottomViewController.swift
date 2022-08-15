@@ -23,16 +23,29 @@
 import UIKit
 
 class BottomViewController: UIViewController {
-   
-   @IBAction func removeFromParent(_ sender: Any) {
-      
-   }
-   
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      
-   }
+    
+    @IBAction func removeFromParent(_ sender: Any) {
+        
+        view.removeFromSuperview()
+        removeFromParentViewController()
+    }
+    
+    override func willMove(toParentViewController parent: UIViewController?) {
+        super.willMove(toParentViewController: parent)
+        
+        print(self, #function, parent?.description ?? "nil")
+    }
+    
+    override func didMove(toParentViewController parent: UIViewController?) {
+        super.didMove(toParentViewController: parent)
+        
+        print(self, #function, parent?.description ?? "nil")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 }
 
 

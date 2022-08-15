@@ -22,6 +22,8 @@
 
 import UIKit
 
+let thresholdkey = "thresholdKey"
+let initialLauchKey = "initialLauchKey"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       
+       if !UserDefaults.standard.bool(forKey: initialLauchKey) { // key에 해당하는 값으 없을 때 false를 return 한다.
+           
+           let defaultSetting = [thresholdkey: 123] as [String: Any]
+           
+           UserDefaults.standard.register(defaults: defaultSetting)
+           
+           UserDefaults.standard.set(true, forKey: initialLauchKey) // 한 번 실행이후 실행되지 않는다.
+       
+           print("Initial Lauch")
+       }
       
       
       return true

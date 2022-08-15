@@ -23,20 +23,24 @@
 import UIKit
 
 class FifthViewController: UIViewController {
-   
-   @IBAction func popToRoot(_ sender: Any) {
-      
-   }
-   
-   @IBAction func popToThird(_ sender: Any) {
-      
-   }
-   
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      
-   }
+    
+    @IBAction func popToRoot(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @IBAction func popToThird(_ sender: Any) {
+        
+        guard let thridVC = navigationController?.viewControllers.first(where: { $0 is ThirdViewController
+        }) else { return }
+        
+        navigationController?.popToViewController(thridVC, animated: true)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+    }
 }
 
 

@@ -47,14 +47,14 @@ class FlowLayoutViewController: UIViewController {
         
         if let layout = listCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             
-            // MARK: - Cell크기 변경
+            // Cell크기 변경
             layout.itemSize = CGSize(width: 100, height: 100)
             
-            // MARK: - Cell 라인 여백, 셀 여백(수직, 수평에 따라 둘이 달라진다.)
+            // 라인 여백, 셀 여백(수직, 수평에 따라 둘이 달라진다.)
             layout.minimumInteritemSpacing = 5
             layout.minimumLineSpacing = 5
             
-            // MARK: - Section Inset (항상 같은 값을 유지한다.)
+            // Section Inset (항상 같은 값을 유지한다.)
             layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         }
     }

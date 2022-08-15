@@ -25,6 +25,7 @@ import UIKit
 
 class ColorListViewController: UIViewController {
     
+    // Collection View에 사용할 Data추가
     let list = MaterialColorDataSource.generateMultiSectionData()
     
     override func viewDidLoad() {

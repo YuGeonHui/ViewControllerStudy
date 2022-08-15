@@ -23,10 +23,22 @@
 import UIKit
 
 class TopViewController: UIViewController {
-   
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      
-   }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+
+    }
+    
+    override func willMove(toParentViewController parent: UIViewController?) {
+        super.willMove(toParentViewController: parent)
+        
+        print(self, #function, parent?.description ?? "nil")
+    }
+    
+    override func didMove(toParentViewController parent: UIViewController?) {
+        super.didMove(toParentViewController: parent)
+        
+        print(self, #function, parent?.description ?? "nil")
+    }
 }

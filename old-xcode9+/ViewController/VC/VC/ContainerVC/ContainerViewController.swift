@@ -23,26 +23,43 @@
 import UIKit
 
 class ContainerViewController: UIViewController {
-   
-   
-   
-   @objc func removeChild() {
-     
-   }
-   
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      
-      navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(removeChild))
-   }
+    
+    @IBOutlet weak var bottomContainerView: UIView!
+    
+    @objc func removeChild() {
+        
+        for vc in childViewControllers {
+            
+            vc.willMove(toParentViewController: nil)
+            
+            vc.view.removeFromSuperview()
+            vc.removeFromParentViewController()
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let childVC = storyboard?.instantiateViewController(withIdentifier: "BottomViewController") {
+            
+            addChildViewController(childVC)
+            
+            childVC.didMove(toParentViewController: self)
+            childVC.view.frame = bottomContainerView.bounds
+            
+            bottomContainerView.addSubview(childVC.view)
+        }
+        
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(removeChild))
+    }
 }
 
 
 extension ContainerViewController {
-   override var description: String {
-      return String(describing: type(of: self))
-   }
+    override var description: String {
+        return String(describing: type(of: self))
+    }
 }
 
 

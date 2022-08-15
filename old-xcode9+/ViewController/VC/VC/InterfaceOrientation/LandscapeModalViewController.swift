@@ -24,46 +24,69 @@ import UIKit
 import AVFoundation
 
 class LandscapeModalViewController: UIViewController {
-
-   @IBOutlet weak var closeButton: UIButton!
-   @IBOutlet weak var playerView: PlayerView!
-   
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      guard let url = Bundle.main.url(forResource: "video", withExtension: "mp4") else { return }
-      let player = AVPlayer(url: url)
-      playerView.player = player
-   }
-   
-   override func viewDidAppear(_ animated: Bool) {
-      super.viewDidAppear(animated)
-      
-      playerView.player?.play()
-   }
-   
-   override func viewWillDisappear(_ animated: Bool) {
-      super.viewWillDisappear(animated)
-      
-      playerView.player?.pause()
-   }
-   
-   
+    
+    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var playerView: PlayerView!
+    
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return .landscapeLeft
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        
+        print(newCollection.verticalSizeClass.description)
+        
+        switch newCollection.verticalSizeClass {
+        case .regular:
+            closeButton.backgroundColor = UIColor.systemRed.withAlphaComponent(0.5)
+        default:
+            closeButton.backgroundColor = UIColor.systemGreen.withAlphaComponent(0.5)
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        if size.height > size.width {
+            closeButton.backgroundColor = UIColor.systemRed.withAlphaComponent(0.5)
+        } else {
+            closeButton.backgroundColor = UIColor.systemGreen.withAlphaComponent(0.5)
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let url = Bundle.main.url(forResource: "video", withExtension: "mp4") else { return }
+        let player = AVPlayer(url: url)
+        playerView.player = player
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        playerView.player?.play()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        playerView.player?.pause()
+    }
 }
 
-
-
 extension UIUserInterfaceSizeClass {
-   var description: String {
-      switch self {
-      case .compact:
-         return "Compact"
-      case .regular:
-         return "Regular"
-      default:
-         return "Unspecified"
-      }
-   }
+    var description: String {
+        switch self {
+        case .compact:
+            return "Compact"
+        case .regular:
+            return "Regular"
+        default:
+            return "Unspecified"
+        }
+    }
 }
 
 

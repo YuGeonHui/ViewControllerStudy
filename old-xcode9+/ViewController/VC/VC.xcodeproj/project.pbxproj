@@ -55,6 +55,7 @@
 		AAC345A8211DA607007D2460 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC345A7211DA607007D2460 /* Color.swift */; };
 		AAC345AA211DA7C8007D2460 /* ColorListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC345A9211DA7C8007D2460 /* ColorListTableViewController.swift */; };
 		AAC345AC211DA86D007D2460 /* ColorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC345AB211DA86D007D2460 /* ColorDetailViewController.swift */; };
+		B6ED39F928A751E300DE333F /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED39F828A751E300DE333F /* MyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		AAC345A7211DA607007D2460 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		AAC345A9211DA7C8007D2460 /* ColorListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorListTableViewController.swift; sourceTree = "<group>"; };
 		AAC345AB211DA86D007D2460 /* ColorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailViewController.swift; sourceTree = "<group>"; };
+		B6ED39F828A751E300DE333F /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +159,9 @@
 			children = (
 				AAC3459A211D63E6007D2460 /* Video */,
 				AA1B5E6D2112F2AA002D1AF8 /* InterfaceOrientation.storyboard */,
+				AA1B5E6F2112F2E4002D1AF8 /* InterfaceOrientationViewController.swift */,
 				AA8A1DF4211CB5C500D82EB4 /* OrientationRotationViewController.swift */,
 				AAC34596211D5C06007D2460 /* CustomInterfaceOrientationController.swift */,
-				AA1B5E6F2112F2E4002D1AF8 /* InterfaceOrientationViewController.swift */,
 				AAC34598211D5EE0007D2460 /* ConditionalInterfaceOrientationViewController.swift */,
 				AA1B5E712112FB5A002D1AF8 /* LandscapeModalViewController.swift */,
 			);
@@ -185,16 +187,16 @@
 		AA24B6FD210FC3050052BB79 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				AA24B715210FC79C0052BB79 /* ViewController */,
+				AA24B716210FC7A90052BB79 /* ViewManagement */,
+				AA1B5E632112E482002D1AF8 /* LifeCycle */,
 				AA18405A21197F7F003102B0 /* HomeIndicator */,
+				AA1B5E6C2112F273002D1AF8 /* InterfaceOrientation */,
+				AA2F9E6921143D0B00D58745 /* ContainerVC */,
 				AA18405921197F74003102B0 /* StatusBar */,
 				AAC3459F211D967C007D2460 /* SplitViewController */,
 				AA6B877321183E1B0057356F /* TabBarController */,
 				AA9B5B082115980800B49241 /* NavigationController */,
-				AA2F9E6921143D0B00D58745 /* ContainerVC */,
-				AA1B5E6C2112F273002D1AF8 /* InterfaceOrientation */,
-				AA1B5E632112E482002D1AF8 /* LifeCycle */,
-				AA24B716210FC7A90052BB79 /* ViewManagement */,
-				AA24B715210FC79C0052BB79 /* ViewController */,
 				AA24B710210FC4080052BB79 /* Predefined */,
 			);
 			path = VC;
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				AA24B717210FC7D10052BB79 /* ViewController.storyboard */,
+				B6ED39F828A751E300DE333F /* MyViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				AAC345A5211D9961007D2460 /* CustomSplitViewController.swift in Sources */,
 				AA0EBAE52116AEC10066C954 /* SecondViewController.swift in Sources */,
 				AAC345A8211DA607007D2460 /* Color.swift in Sources */,
+				B6ED39F928A751E300DE333F /* MyViewController.swift in Sources */,
 				AAC345AA211DA7C8007D2460 /* ColorListTableViewController.swift in Sources */,
 				AA6B87792118446D0057356F /* FirstTabViewController.swift in Sources */,
 				AA18406221198094003102B0 /* BlackViewController.swift in Sources */,
