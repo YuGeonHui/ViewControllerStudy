@@ -285,7 +285,7 @@ using</string>
             </objects>
             <point key="canvasLocation" x="3180" y="-1506"/>
         </scene>
-        <!--First View Controller-->
+        <!--First-->
         <scene sceneID="nKv-l6-0Qm">
             <objects>
                 <viewController storyboardIdentifier="FirstViewController" id="8OI-AX-WfQ" customClass="FirstViewController" customModule="VC" customModuleProvider="target" sceneMemberID="viewController">
@@ -334,7 +334,21 @@ using</string>
                             <constraint firstItem="VM0-6b-feJ" firstAttribute="bottom" secondItem="I9d-aS-Qgc" secondAttribute="bottom" constant="20" id="xsc-WO-dMi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0tV-fU-L3I"/>
+                    <navigationItem key="navigationItem" title="First" id="0tV-fU-L3I">
+                        <barButtonItem key="backBarButtonItem" title="Go Back" id="ASQ-NU-od0"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="m7s-rE-o06">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="f0V-QD-NOZ">
+                                <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="VUx-as-aVf">
+                                    <rect key="frame" x="308" y="12.666666666666664" width="51" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </switch>
+                            </barButtonItem>
+                            <barButtonItem title="Action" id="qZk-bQ-cZ0"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZk-bO-4bb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
