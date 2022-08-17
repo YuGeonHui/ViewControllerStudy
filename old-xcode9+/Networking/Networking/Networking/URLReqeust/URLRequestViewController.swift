@@ -23,14 +23,41 @@
 import UIKit
 
 class URLRequestViewController: UIViewController {
-   
-   @IBOutlet weak var imageView: UIImageView!
-   
-   @IBAction func sendRequest(_ sender: Any) {
-      imageView.image = nil
-      
-      // Code Input Point #1
-      
-      // Code Input Point #1
-   }
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBAction func sendRequest(_ sender: Any) {
+        imageView.image = nil
+        
+        // Code Input Point #1
+        guard let url = URL(string: picUrlStr) else {
+            fatalError("Invalid URL")
+        }
+        
+//        do {
+//
+//            let data = try Data(contentsOf: url)
+//            imageView.image = UIImage(data: data)
+//
+//        } catch {
+//
+//            print(error)
+//        }
+        
+        let _ = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            if let error = error {
+                print(error)
+            } else if let data = data {
+                
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                }
+            }
+        }
+        
+        
+        // Code Input Point #1
+    }
 }

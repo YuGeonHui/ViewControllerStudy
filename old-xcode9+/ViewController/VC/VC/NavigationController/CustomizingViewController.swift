@@ -23,12 +23,17 @@
 import UIKit
 
 class CustomizingViewController: UIViewController {
-   
-   override func viewDidLoad() {
-      super.viewDidLoad()
-      
-            
-   }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationItem.largeTitleDisplayMode = .automatic
+        } else {
+            // Fallback on earlier versions
+        }
+    }
 }
 
 

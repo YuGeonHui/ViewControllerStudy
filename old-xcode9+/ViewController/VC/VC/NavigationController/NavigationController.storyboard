@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -76,7 +77,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="qwM-ih-rhH" kind="presentation" id="egM-Yb-KD8"/>
+                                            <segue destination="Uap-N0-Mbt" kind="presentation" id="egM-Yb-KD8"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="tQf-w3-LTK" style="IBUITableViewCellStyleDefault" id="lr8-sc-G2t">
@@ -123,10 +124,30 @@
                         <viewLayoutGuide key="safeArea" id="HaK-rA-ZU2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Customizing" id="inn-bu-a33"/>
+                    <connections>
+                        <segue destination="1j0-Zt-BCS" kind="show" id="lsO-05-hYV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RDs-mj-aXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="863"/>
+            <point key="canvasLocation" x="1943.2" y="862.3152709359606"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Eu4-ID-d7h">
+            <objects>
+                <viewController id="1j0-Zt-BCS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="urw-Gy-H46">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="h0g-o6-25U"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wVK-0w-3PB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3NU-vu-MkP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2946" y="862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gd9-nK-QQw">
@@ -637,8 +658,31 @@ using</string>
             </objects>
             <point key="canvasLocation" x="6868" y="-591"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w2X-En-M4x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uap-N0-Mbt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="D89-q4-Jwz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qwM-ih-rhH" kind="relationship" relationship="rootViewController" id="GSD-Lw-WCQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZEW-0J-6A8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.8" y="862.3152709359606"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="nUM-eI-NoF"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

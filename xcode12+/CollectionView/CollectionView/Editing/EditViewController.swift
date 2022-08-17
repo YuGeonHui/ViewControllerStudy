@@ -34,26 +34,45 @@ class EditViewController: UIViewController {
     
     func emptySelectedList() {
         
+        selectedList.removeAll()
+        
+        let targetSection = IndexSet(integer: 0)
+        listCollectionView.reloadSections(targetSection)
     }
-    
     
     func insertSection() {
         
+        let sectionData = MaterialColorDataSource.Section()
+        colorList.insert(sectionData, at: 0)
+        
+        let targetSection = IndexSet(integer: 1)
+        listCollectionView.insertSections(targetSection)
     }
     
     
     func deleteSecondSection() {
         
+        colorList.remove(at: 0)
+        
+        let targetSection = IndexSet(integer: 1)
+        listCollectionView.deleteSections(targetSection)
     }
     
     
     func moveSecondSectionToThird() {
         
+        let target = colorList.remove(at: 0)
+        
+        colorList.insert(target, at: 1)
+        listCollectionView.moveSection(1, toSection: 2)
     }
     
     
     func performBatchUpdates() {
         
+        let deleteIndexPaths = (1..<3)
+            .compactMap { _ in Int.random(in: 0..< colorList)
+            }
     }
     
     
