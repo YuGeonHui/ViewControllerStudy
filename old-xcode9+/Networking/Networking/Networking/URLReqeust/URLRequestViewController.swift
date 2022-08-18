@@ -47,16 +47,15 @@ class URLRequestViewController: UIViewController {
         let _ = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let error = error {
+                
                 print(error)
+                
             } else if let data = data {
                 
                 let image = UIImage(data: data)
-                DispatchQueue.main.async {
-                    self.imageView.image = image
-                }
+                DispatchQueue.main.async { self.imageView.image = image }
             }
         }
-        
         
         // Code Input Point #1
     }
