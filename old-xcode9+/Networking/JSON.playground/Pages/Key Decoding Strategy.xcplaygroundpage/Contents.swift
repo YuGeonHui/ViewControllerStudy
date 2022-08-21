@@ -26,6 +26,8 @@ let decoder = JSONDecoder()
 
 //
 
+decoder.keyDecodingStrategy = .convertFromSnakeCase
+
 //
 
 do {

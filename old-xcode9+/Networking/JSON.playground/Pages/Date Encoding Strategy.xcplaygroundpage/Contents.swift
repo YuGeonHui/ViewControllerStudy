@@ -24,6 +24,14 @@ do {
 }
 
 //
+
+// encoder.dateEncodingStrategy = .iso8601
+
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy/MM/dd"
+
+encoder.dateEncodingStrategy = .formatted(formatter)
+
 //
 
 do {

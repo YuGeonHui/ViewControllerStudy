@@ -3,14 +3,19 @@
 import Foundation
 
 struct Person: Codable {
-   var firstName: String
-   var lastName: String
-   var age: Int
-   var address: String?
-   
-   //
-   
-   //
+    var firstName: String
+    var lastName: String
+    var age: Int
+    var address: String?
+    
+    // Key Mapping
+    enum CodingKeys: String, CodingKey {
+        case firstName
+        case lastName
+        case age
+        case address = "homeAddress"
+    }
+    //
 }
 
 let jsonStr = """
@@ -23,16 +28,16 @@ let jsonStr = """
 """
 
 guard let jsonData = jsonStr.data(using: .utf8) else {
-   fatalError()
+    fatalError()
 }
 
 let decoder = JSONDecoder()
 
 do {
-   let p = try decoder.decode(Person.self, from: jsonData)
-   dump(p)
+    let p = try decoder.decode(Person.self, from: jsonData)
+    dump(p)
 } catch {
-   print(error)
+    print(error)
 }
 
 
