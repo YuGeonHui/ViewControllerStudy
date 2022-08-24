@@ -28,7 +28,28 @@ class ReorderingViewController: UIViewController {
     
     @IBOutlet weak var listCollectionView: UICollectionView!
     
-    
+    @IBAction func handlePanGesture(_ sender: UIPanGestureRecognizer) {
+        
+        let location = sender.location(in: listCollectionView)
+        
+        switch sender.state {
+        case .began:
+            if let indexPath = listCollectionView.indexPathForItem(at: location) {
+                listCollectionView.beginInteractiveMovementForItem(at: indexPath)
+            }
+        case .changed:
+            listCollectionView.updateInteractiveMovementTargetPosition(location)
+            
+        case .ended:
+            
+            listCollectionView.endInteractiveMovement()
+            
+        default:
+            
+            listCollectionView.cancelInteractiveMovement()
+        }
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +60,14 @@ class ReorderingViewController: UIViewController {
 
 
 extension ReorderingViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        let target = list[sourceIndexPath.section].colors.remove(at: sourceIndexPath.item)
+        
+        list[destinationIndexPath.section].colors.insert(target, at: destinationIndexPath.item)
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return list.count
     }

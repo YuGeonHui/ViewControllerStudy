@@ -70,9 +70,6 @@ class EditViewController: UIViewController {
     
     func performBatchUpdates() {
         
-        let deleteIndexPaths = (1..<3)
-            .compactMap { _ in Int.random(in: 0..< colorList)
-            }
     }
     
     
