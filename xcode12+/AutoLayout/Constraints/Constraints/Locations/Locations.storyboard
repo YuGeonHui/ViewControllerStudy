@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,29 +17,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="423-1L-PaP" userLabel="RedView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="423-1L-PaP" userLabel="RedView">
                                 <rect key="frame" x="20" y="108" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="PZU-kD-B73"/>
+                                    <constraint firstAttribute="height" constant="150" id="a1G-bV-53u"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H6T-ua-dyv" userLabel="GreenView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6T-ua-dyv" userLabel="GreenView">
                                 <rect key="frame" x="244" y="108" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="NZg-gY-JvH"/>
+                                    <constraint firstAttribute="height" constant="150" id="tjD-h6-fR8"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhq-9a-Yy3" userLabel="BlueView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhq-9a-Yy3" userLabel="BlueView">
                                 <rect key="frame" x="20" y="692" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="BKX-Up-isU"/>
+                                    <constraint firstAttribute="width" constant="150" id="qbl-YP-aEE"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQ8-Gt-jE2" userLabel="YellowView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQ8-Gt-jE2" userLabel="YellowView">
                                 <rect key="frame" x="244" y="692" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="j3Q-AS-ehQ"/>
+                                    <constraint firstAttribute="height" constant="150" id="sHA-lw-V5p"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="H6T-ua-dyv" secondAttribute="trailing" constant="20" id="2hJ-Od-WYM"/>
+                            <constraint firstItem="H6T-ua-dyv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="KCx-Ln-Yaf"/>
+                            <constraint firstItem="423-1L-PaP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="LmB-e6-Cpl"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fhq-9a-Yy3" secondAttribute="bottom" constant="20" id="cft-5r-MNp"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="lQ8-Gt-jE2" secondAttribute="trailing" constant="20" id="ePc-Li-kAb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lQ8-Gt-jE2" secondAttribute="bottom" constant="20" id="gjo-iZ-PRx"/>
+                            <constraint firstItem="fhq-9a-Yy3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="jhY-3q-FX3"/>
+                            <constraint firstItem="423-1L-PaP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="t8s-zD-cGB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Locations" id="U0x-Zz-7Xl"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
