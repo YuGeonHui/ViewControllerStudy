@@ -39,6 +39,29 @@ class ConstantViewController: UIViewController {
     
     @IBAction func updateConstant(_ sender: Any) {
         
+        // x,y 좌표 변경, 너비 높이 변경 (제약이 존재하는 경우 적용되지 않는다.)
+        // blueView.frame = CGRect(x: 100, y: 100, width: 200, height: 200)
+        
+        // 제약을 outlet으로 지정하고, constant를 입력해준다.
+        blueViewLeadingConstraint.constant = 100
+        blueViewTopConstraint.constant = 100
+        
+        blueViewWidthConstraint.constant = 200
+        blueViewHeightConstraint.constant = 200
+        
+        print(#function)
+        
+        let buttonHeight = grayButton.frame.height
+        
+        if grayButtonBottomConstraint.constant < 0 {
+            grayButtonBottomConstraint.constant = 0
+        } else {
+            grayButtonBottomConstraint.constant = (-view.frame.height / 2) + buttonHeight
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     override func viewDidLoad() {
