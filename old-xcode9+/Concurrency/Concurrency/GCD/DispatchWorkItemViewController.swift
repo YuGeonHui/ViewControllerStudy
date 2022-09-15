@@ -28,10 +28,18 @@ class DispatchWorkItemViewController: UIViewController {
    var currentWorkItem: DispatchWorkItem!
    
    @IBAction func submitItem(_ sender: Any) {
-      
+       currentWorkItem = DispatchWorkItem(block: {
+           for num in 0..<100 {
+               print(num, separator: " ", terminator: " ")
+               Thread.sleep(forTimeInterval: 0.1)
+           }
+       })
+       
+       workQueue.async(execute: currentWorkItem)
    }
    
    @IBAction func cancelItem(_ sender: Any) {
       
+       
    }
 }

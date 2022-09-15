@@ -24,36 +24,81 @@ import UIKit
 
 
 class DispatchQueueViewController: UIViewController {
-   
-   @IBOutlet weak var valueLabel: UILabel!
-
-   
-   
-   @IBAction func basicPattern(_ sender: Any) {
-      var total = 0
-      for num in 1...100 {
-         total += num
-         Thread.sleep(forTimeInterval: 0.1)
-      }
-
-      valueLabel.text = "\(total)"
-   }
-   
-   @IBAction func sync(_ sender: Any) {
-      
-   }
-   
-   @IBAction func async(_ sender: Any) {
-      
-   }
-   
-   @IBAction func delay(_ sender: Any) {
-      
-   }
-   
-   @IBAction func concurrentIteration(_ sender: Any) {
-      
-   }
+    
+    @IBOutlet weak var valueLabel: UILabel!
+    
+    let serialWorkQueue = DispatchQueue(label: "SerialWorkQueue")
+    let concurrentQueue = DispatchQueue(label: "ConcurrentWorkQueue", attributes: .concurrent)
+    
+    @IBAction func basicPattern(_ sender: Any) {
+        
+        DispatchQueue.global().async {
+            
+            var total = 0
+            for num in 1...100 {
+                total += num
+                Thread.sleep(forTimeInterval: 0.1)
+            }
+            
+            DispatchQueue.main.async {
+                self.valueLabel.text = "\(total)"
+            }
+        }
+    }
+    
+    @IBAction func sync(_ sender: Any) {
+        
+        concurrentQueue.sync { // 동기
+            for _ in 0..<3 {
+                print("Hello")
+            }
+            print("Point1")
+        }
+        print("Point2")
+    }
+    
+    @IBAction func async(_ sender: Any) {
+        
+        concurrentQueue.async { // 비동기
+            for _ in 0..<3 {
+                print("Hello")
+            }
+            print("Point1")
+        }
+        print("Point2")
+    }
+    
+    @IBAction func delay(_ sender: Any) {
+        
+        let delay = DispatchTime.now() + 3
+        
+        concurrentQueue.asyncAfter(deadline: delay) {
+            print("Point 1")
+        }
+        
+        print("Point 2")
+    }
+    
+    @IBAction func concurrentIteration(_ sender: Any) {
+        
+        var start = DispatchTime.now()
+        for index in 0...10 {
+            print(index, separator: " ", terminator: " ")
+            Thread.sleep(forTimeInterval: 0.2)
+        }
+        
+        var end = DispatchTime.now()
+        print("\nfor-in : ", Double(end.uptimeNanoseconds - start.uptimeNanoseconds) / 1000000000)
+        
+        start = .now()
+        DispatchQueue.concurrentPerform(iterations: 20) { index in
+            print(index, separator: " ", terminator: " ")
+            Thread.sleep(forTimeInterval: 0.1)
+        }
+        
+        end = .now()
+        print("\nfor-in : ", Double(end.uptimeNanoseconds - start.uptimeNanoseconds) / 1000000000)
+    }
 }
 
 

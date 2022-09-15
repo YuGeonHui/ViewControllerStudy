@@ -23,17 +23,49 @@
 import UIKit
 
 class OperationQueueViewController: UIViewController {
-   
-   
-   @IBAction func startOperation(_ sender: Any) {
-      
-   }
-   
-   @IBAction func cancelOperation(_ sender: Any) {
-      
-   }
-   
-   deinit {
-      print(self, #function)
-   }
+    
+    let queue = OperationQueue()
+    
+    @IBAction func startOperation(_ sender: Any) {
+        
+        queue.addOperation {
+            
+            autoreleasepool {
+                for _ in 1..<100 {
+                    print("apple", separator: " ", terminator: " ")
+                    Thread.sleep(forTimeInterval: 0.3)
+                }
+            }
+        }
+        
+        let op = BlockOperation {
+            autoreleasepool {
+                for _ in 1..<100 {
+                    print("banan", separator: " ", terminator: " ")
+                    Thread.sleep(forTimeInterval: 0.6)
+                }
+            }
+        }
+        
+        queue.addOperation(op)
+        
+        op.addExecutionBlock {
+            autoreleasepool {
+                for _ in 1..<100 {
+                    print("lemon", separator: " ", terminator: " ")
+                    Thread.sleep(forTimeInterval: 0.5)
+                    
+                }
+            }
+        }
+        
+    }
+    
+    @IBAction func cancelOperation(_ sender: Any) {
+        
+    }
+    
+    deinit {
+        print(self, #function)
+    }
 }
