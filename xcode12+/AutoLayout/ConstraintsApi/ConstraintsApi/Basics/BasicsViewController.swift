@@ -32,23 +32,100 @@ class BasicsViewController: UIViewController {
     var titleLabel: UILabel!
     var grayView: UIView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    // 제약을 만든다음 반드시 활성해야 한다. active
+    // 재약을 추가하기전에 뷰 계층애 추가해줘야 한다.
+    // 자동생성제약, 우리가만든 제약 충돌하기 때문에 translatesAutoresizingMaskIntoConstraints = false
+    
+    fileprivate func addRedView() {
+        
         redView = UIView(frame: .zero)
         redView.backgroundColor = .systemRed
+        redView.translatesAutoresizingMaskIntoConstraints = false
         
-        let leadingConstraint = NSLayoutConstraint(item: redView, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 0)
+        view.addSubview(redView)
+        
+        guard let redView = redView else { return }
+        
+        let leadingConstraint = NSLayoutConstraint(item: redView, attribute: .leading, relatedBy: .equal, toItem: view.layoutMarginsGuide, attribute: .leading, multiplier: 1.0, constant: 0)
         leadingConstraint.isActive = true
         
-        var topConstraints = redView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+        let topConstraints = redView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         topConstraints.isActive = true
         
-        var widthConstraint = NSLayoutConstraint(item: redView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100)
+        let widthConstraint = NSLayoutConstraint(item: redView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100)
         
         widthConstraint.isActive = true
         
-        var heightConstraint = redView.heightAnchor.constraint(equalToConstant: 100)
+        let heightConstraint = redView.heightAnchor.constraint(equalToConstant: 100)
         heightConstraint.isActive = true
+    }
+    
+    func addGreenView() {
+        
+        greenView = UIView(frame: .zero)
+        greenView.backgroundColor = .green
+        greenView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(greenView)
+        
+        guard let greenView = greenView else { return }
+        
+        let views: [String: Any] = ["greenView" : greenView]
+        
+        var format = "V:|-[greenView(100)]"
+        
+        let vertConstraints = NSLayoutConstraint.constraints(withVisualFormat: format, options: [], metrics: nil, views: views)
+        NSLayoutConstraint.activate(vertConstraints)
+        
+        format = "[greenView(100)]-|"
+        let horiConstraints = NSLayoutConstraint.constraints(withVisualFormat: format, options: [], metrics: nil, views: views)
+        NSLayoutConstraint.activate(horiConstraints)
+    }
+    
+    func addBlueView() {
+    
+        blueView = UIView(frame: .zero)
+        blueView.backgroundColor = .blue
+        blueView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(blueView)
+        
+        guard let blueView = blueView else { return }
+        
+        let views: [String: Any] = ["blueView" : blueView]
+        
+        var format = "V:[blueView(100)]-|"
+        
+        let vertConstraints = NSLayoutConstraint.constraints(withVisualFormat: format, options: [], metrics: nil, views: views)
+        NSLayoutConstraint.activate(vertConstraints)
+        
+        format = "|-[blueView(100)]"
+        let horiConstraints = NSLayoutConstraint.constraints(withVisualFormat: format, options: [], metrics: nil, views: views)
+        NSLayoutConstraint.activate(horiConstraints)
+    }
+    
+    func addYellowView() {
+        
+        yellowView = UIView(frame: .zero)
+        yellowView.backgroundColor = .yellow
+        yellowView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(yellowView)
+        
+        yellowView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        yellowView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        yellowView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
+        yellowView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+
+        addRedView()
+        addGreenView()
+        addBlueView()
+        addYellowView()
     }
 }
