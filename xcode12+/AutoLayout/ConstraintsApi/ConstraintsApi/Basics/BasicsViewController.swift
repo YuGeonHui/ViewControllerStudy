@@ -119,6 +119,35 @@ class BasicsViewController: UIViewController {
         yellowView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
+    func addLabel() {
+        
+        titleLabel = UILabel(frame: .zero)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.text = "Hello"
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        
+        view.addSubview(titleLabel)
+        
+        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        // 하단 underLine 제약 추가
+        grayView = UIView(frame: .zero)
+        grayView.translatesAutoresizingMaskIntoConstraints = false
+        grayView.backgroundColor = .gray
+        
+        view.addSubview(grayView)
+        
+        grayView.heightAnchor.constraint(equalToConstant: 3).isActive = true
+        grayView.topAnchor.constraint(equalToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 1.0).isActive = true
+        
+//        grayView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+//        grayView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
+        
+        grayView.widthAnchor.constraint(equalTo: titleLabel.widthAnchor).isActive = true
+        grayView.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor).isActive = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -127,5 +156,6 @@ class BasicsViewController: UIViewController {
         addGreenView()
         addBlueView()
         addYellowView()
+        addLabel()
     }
 }
