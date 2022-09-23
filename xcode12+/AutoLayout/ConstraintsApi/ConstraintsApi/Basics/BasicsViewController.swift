@@ -35,6 +35,20 @@ class BasicsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        redView = UIView(frame: .zero)
+        redView.backgroundColor = .systemRed
         
+        let leadingConstraint = NSLayoutConstraint(item: redView, attribute: .leading, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .leading, multiplier: 1.0, constant: 0)
+        leadingConstraint.isActive = true
+        
+        var topConstraints = redView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+        topConstraints.isActive = true
+        
+        var widthConstraint = NSLayoutConstraint(item: redView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 100)
+        
+        widthConstraint.isActive = true
+        
+        var heightConstraint = redView.heightAnchor.constraint(equalToConstant: 100)
+        heightConstraint.isActive = true
     }
 }
